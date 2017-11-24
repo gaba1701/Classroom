@@ -23,7 +23,7 @@ public class Person {
 		this.age = age;
 	}
 	public String getFirstName() {
-		return firstName;
+		return firstName;																																							
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -41,7 +41,4 @@ public class Person {
 		this.gender = gender;
 	}
 	
-	
-	
-
 }

@@ -61,6 +61,7 @@ public class Student extends Person {
 		this.averageGrade = averageGrade;
 	}
 
+	//calculating Average with firstGrade as input
 	public double calculateAverage(double firstGrade){
 		double sum = firstGrade +secondGrade +thirdGrade;
 		double average = sum /3;
@@ -90,22 +91,25 @@ public class Student extends Person {
 		return false;
 		
 	}
-
-
 	//ToString()
 	public String toString() {
-		calculateAverage(this.getFirstGrade(), getSecondGrade(), getThirdGrade());
+		calculateAverage(getFirstGrade(), getSecondGrade(), getThirdGrade());
 		DecimalFormat df = new DecimalFormat("#.0");
 
 		if (hasClearedTheCourse()) {
-			return "Student: " + getFirstName() + " " + getLastName() + "\n" + "Grades: " + this.firstGrade + " , "
-					+ this.secondGrade + " , " + this.thirdGrade + "\nFinalGrade: " + df.format(this.averageGrade)
-					+ "\nThe student has cleared the course\n-----------------------";
+			return
+					"Student: " + getFirstName() + " " + getLastName() + "\n" +
+					"Grades: " + firstGrade + ", "  + secondGrade + ", " + thirdGrade + "\n" +
+					"FinalGrade: " + df.format(getAverageGrade()) + "\n" +
+					"The student has cleared the course\n"+
+					"-----------------------";
 		}
 
-		return "Student: " + getFirstName() + " " + getLastName() + "\n" + "Grades: " + this.firstGrade + " , "
-				+ this.secondGrade + " , " + this.thirdGrade + "\nFinalGrade: " + df.format(this.getAverageGrade())
-				+ "\nThe student has not cleared the course\n-----------------------";
-
+		return
+				"Student: " + getFirstName() + " " + getLastName() + "\n" +
+				"Grades: " + firstGrade + ", "  + secondGrade + ", " + thirdGrade + "\n" +
+				"FinalGrade: " + df.format(getAverageGrade()) + "\n" +
+				"The student has not cleared the course\n"+
+				"-----------------------";
 	}
 }
